@@ -1,5 +1,6 @@
-###记录
+### 记录
 - 代码大部分修改自:https://github.com/SymeonChen/spider-proxy-pool
+- 改的乱七八糟的，大概自己能用
 ### 修改
 - 修改setting.py内的代理网站列表,有部分不能使用了.
 - 爬取代理网站的策略使用原来的
