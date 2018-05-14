@@ -1,10 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
 import sqlite3
 import uuid
-import setting
-from tools import iptools as iptools
+from tools import iptools as iptools, setting
 import time
 
 db = setting.db

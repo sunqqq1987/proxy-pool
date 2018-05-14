@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-import dboperation
+from tools import dboperation
 import logging
 import random
 from flask import Flask, jsonify

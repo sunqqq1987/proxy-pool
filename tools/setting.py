@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 from fake_useragent import UserAgent
 # set headers,use random
@@ -24,6 +24,6 @@ header_pc = {'User-Agent': UserAgent().random}
 
 proxy_web_loop_number = 2
 
-thread_number = 10
+thread_number = 20
 
 db = 'proxylist.db'

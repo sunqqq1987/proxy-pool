@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
 import time
@@ -6,14 +6,13 @@ import requests
 import logging
 from bs4 import BeautifulSoup
 
-import dboperation
-import setting
-from tools import iptools as iptools
+from tools import iptools as iptools, dboperation, setting
 from fake_useragent import UserAgent
 
 headers_base = {'User-Agent': UserAgent().random}
 proxy_web_page_num = setting.proxy_web_loop_number
 logging.basicConfig(filename='spider.log', level=logging.INFO, format='%(levelname)s:%(asctime)s %(message)s')
+
 
 def getProxy(website, page_num=proxy_web_page_num):
     try:

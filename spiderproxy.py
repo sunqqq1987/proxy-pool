@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 # 修改自https://github.com/SymeonChen/spider-proxy-pool
 # 增加数据库检测成功\失败次数统计,网页api返回成功率比较高的代理
@@ -6,8 +6,8 @@
 
 from multiprocessing.dummy import Pool as ThreadPool
 # import dboperation
-import setting 
-import proxyspider
+from tools import setting, proxyspider
+
 # import apiserver
 
 thread_number = setting.thread_number  # 线程数量
