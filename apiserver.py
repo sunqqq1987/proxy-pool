@@ -4,8 +4,10 @@
 from tools import dboperation
 import logging
 import random
+import os
 from flask import Flask, jsonify
-logging.basicConfig(filename='api_server.log', level=logging.INFO, format='%(levelname)s:%(asctime)s %(message)s')
+# 使用os.getcwd()在Ubuntu上面获取的为用户主目录，获取不到脚本目录，具体原因搞不清楚
+logging.basicConfig(filename=os.path.dirname(__file__)+os.sep+'api_server.log', level=logging.INFO, format='%(levelname)s:%(asctime)s %(message)s')
 app = Flask(__name__)
 
 
@@ -35,7 +37,7 @@ def run():
     print("Get all ip from http://localhost:5000/api/all")
     print("Get best ip from http://localhost:5000/api/best")
     print("Get random best ip from http://localhost:5000/api/random")
-    app.run()
+    app.run(app.run(host='0.0.0.0', port=5000))
 
 
 if __name__ == '__main__':

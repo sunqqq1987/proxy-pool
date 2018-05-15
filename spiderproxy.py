@@ -5,10 +5,8 @@
 # 减少了代理爬取网站,发现有些网站规则变了,中间报错,逐渐增加
 
 from multiprocessing.dummy import Pool as ThreadPool
-# import dboperation
 from tools import setting, proxyspider
 
-# import apiserver
 
 thread_number = setting.thread_number  # 线程数量
 proxy_list = setting.proxy_web_list  # 网站列表
