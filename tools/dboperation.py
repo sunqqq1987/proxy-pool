@@ -7,6 +7,7 @@ from tools import iptools as iptools, setting
 import time
 
 db = setting.db
+
 try:
     conn = sqlite3.connect(db)
     conn.execute('''CREATE TABLE PROXY
@@ -89,11 +90,11 @@ def low(address, port, location, speed=5000, protocol='default'):
         conn.commit()
         conn.close()
         # 数据库数据提取
-        # temp = select(address)
-        # # 检查可用次数,低于-15的删除
-        # check_info = temp[0][5]
-        # if check_info < -15:
-        #     delete(address)
+        temp = select(address)
+        # 检查可用次数,低于-10的删除
+        check_info = temp[0][5]
+        if check_info < -10:
+            delete(address)
         pass
         time.sleep(0.6)
 
@@ -133,7 +134,7 @@ def select_best(address=-1, port=-1, location=-1, protocol=-1, speed=-1):
     conn = sqlite3.connect(db)
     try:
         if (address, port, location, protocol, speed) == (-1, -1, -1, -1, -1):
-            cursor = conn.execute('SELECT * FROM PROXY WHERE CHECK_INFO > 13 AND 0<SPEED < 600')
+            cursor = conn.execute('SELECT * FROM PROXY WHERE CHECK_INFO > 20 AND 0<SPEED < 500')
         else:
             xlist = ""
             nlist = []
